@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>posts</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- creating a for loop to create an ion-card for every post in the database -->
+  <ion-card *ngFor="let post of posts">
+    <!-- adding the post title from the database as the card header -->
+    <ion-card-header>
+      <ion-card-title>{{ post.title }}</ion-card-title>
+    </ion-card-header>
+    <!-- adding the post body from the database as the card content -->
+    <ion-card-content>
+      {{ post.body }}
+    </ion-card-content>
+    <!-- creating a button to redirect the user to the post details page while sending a parameter the post id to use it in the details page -->
+    <ion-Button [routerLink]="['/details',post.id]">
+      more ...
+    </ion-Button>
+  </ion-card>
+</ion-content>

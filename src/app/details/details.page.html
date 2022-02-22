@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- creating a for loop to create an ion-card for every post in the database -->
+  <ion-card *ngFor="let item of post">
+    <!-- adding the post title from the database as the card header -->
+    <ion-card-header>
+      <ion-card-title>{{ item.title }}</ion-card-title>
+    </ion-card-header>
+    <!-- adding the post body from the database as the card content -->
+    <ion-card-content>
+      {{ item.body }}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
